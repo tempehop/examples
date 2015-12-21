@@ -43,6 +43,7 @@ class LimitedQueue
     @events.push(event)
     # A bit messy to sort this way - but the intent is to keep the list small
     # keep the newest items
+    # For much larger result sets we could use a binary heap
     @events.sort! { | first, second |
       second.event_date_time <=> first.event_date_time
     }
